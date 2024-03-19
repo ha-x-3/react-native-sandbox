@@ -15,12 +15,22 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyDFb7qE7UadcPSZQ3Y1mpWTwn1AdR40ZF4"
+        }
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/bethanys-adaptive.png",
-        "backgroundColor": "#36302c"
+        "backgroundColor": "#36302c",
+        "config": {
+          "googleMaps": {
+            "apiKey": "AIzaSyA5rGOr2lkzTWlKvIHdmQ5h4rG132Llu2Q"
+          }
+        }
       }
     },
     "web": {
