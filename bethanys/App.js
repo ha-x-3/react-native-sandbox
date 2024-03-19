@@ -36,7 +36,7 @@ const App = () => {
       <StatusBar style="light"/>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {

@@ -2,6 +2,7 @@
   "expo": {
     "name": "bethanys",
     "slug": "bethanys",
+    "scheme": "myapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/bethanys-icon.png",
@@ -38,7 +39,8 @@
       "bundler": "metro"
     },
     "plugins": [
-      "expo-font"
+      "expo-font",
+      "expo-router"
     ]
   }
 }
