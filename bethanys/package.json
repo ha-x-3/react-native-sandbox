@@ -26,8 +26,8 @@
     "expo-constants": "~15.4.5"
   },
   "overrides": {
-    "metro": "0.76.0",
-    "metro-resolve": "0.76.0"
+    "metro": "0.80.7",
+    "metro-resolve": "0.80.7"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

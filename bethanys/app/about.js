@@ -1,10 +1,14 @@
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import { StyleSheet, Text, View } from 'react-native';
+import { useRouter } from 'expo-router';
 
 const About = () => {
+
+    const router = useRouter();
+
     return (
         <>
-            <View style={StyleSheet.mapContainer}>
+            <View style={styles.mapContainer}>
                 <MapView
                     style={styles.map}
                     initialRegion={{
@@ -20,6 +24,14 @@ const About = () => {
                 <Text style={styles.heading}>The Greatest Pies in the World!</Text>
                 <Text style={styles.content}>Welcome to Bethany's Pie Shop where we bake the best pies in the world.</Text>
                 <Text style={styles.address}>Located at 1313 Mockingbird Lane, Suite B</Text>
+                <Text
+                    style={styles.back}
+                    onPress={() => {
+                        router.replace('/');
+                    }}
+                >
+                    GO HOME
+                </Text>
             </View>
         </>
     )
@@ -52,6 +64,13 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         fontWeight: 'bold',
         fontFamily: 'RobotoCondensed-Regular'
+    },
+    back: {
+        paddingTop: 80,
+        alignSelf: 'center',
+        fontWeight: 'bold',
+        fontFamily: 'RobotoCondensed-Regular',
+        textDecorationLine: 'underline'
     }
 });
 
