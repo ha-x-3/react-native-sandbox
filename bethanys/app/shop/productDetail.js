@@ -1,19 +1,20 @@
-import { useState } from "react";
-import { StyleSheet,
-        Text,
-        View,
-        Image,
-        TextInput,
-        TouchableOpacity,
-        Alert
-} from "react-native-web";
-import { useSearchParams, useRouter } from 'expo-router';
-import products from "./shopDB";
+import { useState } from 'react';
+import { 
+    StyleSheet, 
+    Text, 
+    View, 
+    Image, 
+    TextInput, 
+    TouchableOpacity, 
+    Alert 
+} from 'react-native';
+import { useLocalSearchParams, useRouter } from 'expo-router';
+import products from './shopDB';
 
 const ProductDetail = () => {
     const [quantity, onChangeQuantity] = useState('1');
     const router = useRouter();
-    const { selectedProduct } = useSearchParams();
+    const { selectedProduct } = useLocalSearchParams();
     const displayProduct = products.find(
         products => products.itemId === selectedProduct
     );
@@ -21,12 +22,12 @@ const ProductDetail = () => {
     const placeOrder = () => {
         let price = displayProduct.price * quantity;
         Alert.alert(
-            `Your order will be ${price} dollars. You will be contacted by staff shortly.`
+         `Your order will be ${price} dollars. You will be contacted by staff`
         );
-        router.push('/shop/home');
+        router.push('/shop/home');    
     };
 
-    return (
+    return(
         <View style={styles.container}>
             <View style={styles.nameView}>
                 <Text style={styles.itemName}>
@@ -35,44 +36,52 @@ const ProductDetail = () => {
             </View>
             <View style={styles.productView}>
                 <Image 
-                    source={displayProduct.itemImage}
-                    style={styles.projectImage}
-                />
+                    source={displayProduct.itemImage} 
+                    style={styles.productImage} 
+                />    
             </View>
             <View style={styles.descriptionView}>
                 <Text style={styles.description}>
                     {displayProduct.description}
                 </Text>
                 <Text style={styles.price}>
-                    Total Price: ${displayProduct.price * quantity}
-                </Text>
+                    Total Price: ${displayProduct.price * quantity} 
+                </Text>    
             </View>
+
             <View style={styles.quantityView}>
                 <Text style={styles.description}>Quantity:</Text>
-                <TextInput 
+                <TextInput
                     style={styles.input}
-                    onChange={onChangeQuantity}
+                    onChangeText={onChangeQuantity}
                     value={quantity}
                     keyboardType='numeric'
-                    selectedTextOnFocus={true}
-                />
+                    selectTextOnFocus={true}
+                /> 
             </View>
+
             <View style={styles.buttonView}>
+
                 <TouchableOpacity
                     onPress={placeOrder}
                     style={styles.order}
                 >
-                    <Text style={styles.description}>Place Order</Text>
+                    <Text style={styles.description}>Place Order</Text>  
                 </TouchableOpacity>
+
                 <TouchableOpacity
                     onPress={() => {
-                        router.back();
+                    router.back();
                     }}
-                    style={goBack}
+                    style={styles.goBack}
                 >
-                    <Text style={styles.description}>Go Back</Text>
+                    <Text style={styles.description}>Go Back</Text>  
                 </TouchableOpacity>
+
             </View>
+
+
+
         </View>
     )
 };
@@ -100,22 +109,22 @@ const styles = StyleSheet.create({
     descriptionView: {
         flex: 2
     },
-    description: {
+    description:{
         fontFamily: 'RobotoCondensed-Regular',
         fontSize: 14,
         paddingLeft: 5,
         paddingTop: 5
     },
-    price: {
+    price:{
         fontFamily: 'RobotoCondensed-Regular',
         fontSize: 16,
         paddingLeft: 5,
         paddingTop: 10,
         fontWeight: 'bold'
     },
-    quantityView: {
+    quantityView:{
         flex: 2,
-        alignItems: 'center'
+        alignItems: 'center'  
     },
     input: {
         height: 38,
@@ -139,7 +148,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'red',
         borderWidth: 1,
         marginBottom: 10
-    }
+    }    
 });
 
 export default ProductDetail;
