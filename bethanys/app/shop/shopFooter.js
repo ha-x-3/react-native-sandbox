@@ -8,7 +8,7 @@ const ShopFooter = () => {
             <View style={styles.menu}>
                 <Link href='/about' style={styles.link}>About</Link>
                 <Link href='/' style={styles.link}>Home</Link>
-                <Link href='/about' style={styles.link}>News</Link>
+                <Link href='/news' style={styles.link}>News</Link>
                 <Link href='/contact' style={styles.link}>Contact</Link>
             </View>
             <View style={styles.copyRow}>
