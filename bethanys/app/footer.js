@@ -9,7 +9,7 @@ const Footer = () => {
                 <Link href='/about' style={styles.link}>About</Link>
                 <Link href='/shop/home' style={styles.link}>Shop</Link>
                 <Link href='/about' style={styles.link}>News</Link>
-                <Link href='/about' style={styles.link}>Contact</Link>
+                <Link href='/contact' style={styles.link}>Contact</Link>
             </View>
             <View style={styles.copyRow}>
                 <Text style={styles.copyright}>Copr. 2024 Bethanys Pie Shop LLC</Text>
