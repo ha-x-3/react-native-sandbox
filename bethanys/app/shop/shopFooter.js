@@ -1,13 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { Link } from 'expo-router';
 
-const Footer = () => {
+const ShopFooter = () => {
 
     return(
         <View style={styles.footer}>
             <View style={styles.menu}>
                 <Link href='/about' style={styles.link}>About</Link>
-                <Link href='/shop/home' style={styles.link}>Shop</Link>
+                <Link href='/' style={styles.link}>Home</Link>
                 <Link href='/about' style={styles.link}>News</Link>
                 <Link href='/about' style={styles.link}>Contact</Link>
             </View>
@@ -42,4 +42,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Footer;
+export default ShopFooter;

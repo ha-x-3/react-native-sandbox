@@ -19,13 +19,13 @@ const Layout = () => {
         return <SplashScreen />;
     }
 
-    // if (pathname === '/shop/home'||pathname === '/shop/productDetail') {
-    //     return( 
-    //         <View style={styles.container}>
-    //           <Slot />
-    //         </View>
-    //     );
-    // }
+    if (pathname === '/shop/home'||pathname === '/shop/productDetail') {
+        return( 
+            <View style={styles.container}>
+              <Slot />
+            </View>
+        );
+    }
 
     return(
         <View style={styles.container}>
