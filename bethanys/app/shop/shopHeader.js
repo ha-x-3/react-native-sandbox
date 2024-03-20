@@ -2,7 +2,7 @@ import { StyleSheet, View, Image } from "react-native";
 
 const ShopHeader = () => {
     
-    const logo = require('../assets/images/bethanys-pie-shop-logo_logomark-black.png');
+    const logo = require('../../assets/images/bethanys-pie-shop-logo_logomark-black.png');
 
     return (
         <View style={styles.header}>
