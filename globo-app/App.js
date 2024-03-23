@@ -7,6 +7,8 @@ import Homepage from './Home';
 import { Platform } from 'react-native';
 import { useFonts } from 'expo-font';
 import Header from './Header';
+import Footer from './Footer';
+import { navigationRef } from './RootNavigation';
 import * as SplashScreen from 'expo-splash-screen';
 
 SplashScreen.preventAutoHideAsync();
@@ -31,6 +33,7 @@ export default function App() {
   <NavigationContainer
     style={{ paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0}}
     onReady={onLayoutRootView}
+    ref={navigationRef}
   >
     <Stack.Navigator 
       initialRouteName='Globomantics'
@@ -45,6 +48,7 @@ export default function App() {
       >
       </Stack.Screen>
     </Stack.Navigator>
+    <Footer />
   </NavigationContainer>
   );
   
