@@ -10,6 +10,7 @@ import Header from './Header';
 import Footer from './Footer';
 import { navigationRef } from './RootNavigation';
 import * as SplashScreen from 'expo-splash-screen';
+import NewsDetail from './NewsDetail';
 
 SplashScreen.preventAutoHideAsync();
 const Stack = createStackNavigator();
@@ -45,8 +46,15 @@ export default function App() {
         options={{
           header: () => <Header headerDisplay="Globomantics" />
         }}
-      >
-      </Stack.Screen>
+      />
+      <Stack.Screen
+        name="NewsDetail"
+        component={NewsDetail}
+        options={{
+          header: () => <Header headerDisplay="News" />
+        }}
+      />
+      
     </Stack.Navigator>
     <Footer />
   </NavigationContainer>

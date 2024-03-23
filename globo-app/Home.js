@@ -7,7 +7,7 @@ export default function Homepage({navigation}) {
     const [newsData, setData] = useState([]);
 
     useEffect(() => {
-        fetch('http://newsapi.org/v2/everything?q=tech&apiKey=e552bdb09af94b17b6af4968d1805c9e')
+        fetch('http://newsapi.org/v2/top-headlines?country=us&apiKey=e552bdb09af94b17b6af4968d1805c9e')
         .then((response) => response.json())
         .then((json) => setData(json.articles))
         .catch((error) => console.error(error))
@@ -27,7 +27,7 @@ export default function Homepage({navigation}) {
                         style={styles.thumbnail}
                         source={{uri: item.urlToImage}}
                     />
-                    <Text style={blurb}>{item.description}</Text>
+                    <Text style={styles.blurb}>{item.description}</Text>
                 </View>
             </TouchableWithoutFeedback>
         )
@@ -68,7 +68,9 @@ const styles = StyleSheet.create({
     title: {
         paddingBottom: 10,
         fontFamily: 'OpenSans',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        fontSize: 16,
+        textAlign: 'center'
     },
     blurb: {
         fontFamily: 'OpenSans',
