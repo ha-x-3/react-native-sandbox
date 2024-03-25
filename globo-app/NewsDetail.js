@@ -10,7 +10,7 @@ export default function NewsDetail({route, navigation}) {
     const selectedPost = allPostData.find(post => post.url === url);
 
     useEffect(() => {
-        fetch('http://newsapi.org/v2/top-headlines?country=us&apiKey=e552bdb09af94b17b6af4968d1805c9e')
+        fetch('http://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=e552bdb09af94b17b6af4968d1805c9e')
         .then((response) => response.json())
         .then((json) => setAllPostData(json.articles))
         .catch((error) => console.error(error))
