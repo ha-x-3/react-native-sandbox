@@ -18,7 +18,8 @@ export default function Catalogpage({navigation}) {
                         />
                     </View>
                     <View style={styles.producttext}>
-                        <Text style={styles.title}>{item.modelNumber}</Text>
+                        <Text style={styles.title}>{item.model}</Text>
+                        <Text style={styles.subtitle}>Featured Model: {item.modelNumber}</Text>
                         <Text style={styles.description}>{item.description}</Text>
                     </View>
                 </View>
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
         flex: 1
     },
     thumbnail: {
-        height: 260,
+        height: 200,
         width: '100%'
     },
     producttext: {
@@ -64,6 +65,10 @@ const styles = StyleSheet.create({
     title: {
         paddingBottom: 10,
         fontFamily: 'OpenSans-Bold'
+    },
+    subtitle: {
+        fontFamily: 'OpenSans-Bold',
+        fontSize: 12
     },
     description: {
         fontFamily: 'OpenSans',
