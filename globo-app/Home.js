@@ -15,7 +15,7 @@ export default function Homepage({navigation}) {
     }, []);
 
     const storyItem = ({item}) => {
-        //Check for removed stories and don't
+        //Check for removed stories and don't display
         if(item.url.startsWith('https://removed.com')) {
             return null
         }
