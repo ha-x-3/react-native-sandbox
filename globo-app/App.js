@@ -17,7 +17,10 @@ const Stack = createStackNavigator();
 
 export default function App() {
   let [fontsLoaded] = useFonts({
-    'OpenSans': require('./assets/fonts/OpenSans-VariableFont_wdth,wght.ttf'),
+    'OpenSans': require('./assets/fonts/OpenSans-Regular.ttf'),
+    'OpenSans-Italic': require('./assets/fonts/OpenSans-Italic.ttf'),
+    'OpenSans-Bold': require('./assets/fonts/OpenSans-Bold.ttf'),
+
   });
 
   const onLayoutRootView = useCallback(async () => {

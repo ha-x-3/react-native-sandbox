@@ -67,13 +67,11 @@ const styles = StyleSheet.create({
     },
     title: {
         paddingBottom: 10,
-        fontFamily: 'OpenSans',
-        fontWeight: 'bold',
+        fontFamily: 'OpenSans-Bold',
         fontSize: 16,
         textAlign: 'center'
     },
     blurb: {
-        fontFamily: 'OpenSans',
-        fontStyle: 'italic'
+        fontFamily: 'OpenSans-Italic',
     }
 });

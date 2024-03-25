@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator,
     Image, ScrollView, Linking } from "react-native";
-import { WebView } from 'react-native-webview'
 
 export default function NewsDetail({route, navigation}) {
 
     const [dataLoading, finishLoading] = useState(true);
     const [allPostData, setAllPostData] = useState([]);
-    const [showWebView, setShowWebView] = useState(false);
     const { url } = route.params;
     const selectedPost = allPostData.find(post => post.url === url);
 
@@ -23,11 +21,6 @@ export default function NewsDetail({route, navigation}) {
         Linking.openURL(selectedPost.url);
     };
 
-    const handleWebViewToggle = () => {
-        setShowWebView(!showWebView);
-    };
-
-
     return (
         <View style={styles.container}>
             <TouchableOpacity
@@ -37,7 +30,7 @@ export default function NewsDetail({route, navigation}) {
                 <Text style={styles.buttonText}>Go Back</Text>
             </TouchableOpacity>
             {dataLoading ? <ActivityIndicator /> : (
-                <ScrollView bounces={false}>
+                <ScrollView bounces={false} style={{ flex: 1 }}>
                     <Text style={styles.title}>{selectedPost.title}</Text>
                     <Image 
                         style={styles.storyImage}
@@ -48,15 +41,6 @@ export default function NewsDetail({route, navigation}) {
                     <TouchableOpacity style={styles.readMoreButton} onPress={handleReadMore}>
                         <Text style={styles.readMoreText}>Read More</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.webViewButton} onPress={handleWebViewToggle}>
-                        <Text style={styles.webViewText}>{showWebView ? 'Hide WebView' : 'Show WebView'}</Text>
-                    </TouchableOpacity>
-                    {showWebView && (
-                        <WebView
-                            source={{ uri: selectedPost.url }}
-                            style={styles.webView}
-                        />
-                    )}
                 </ScrollView>
             )}
         </View>
@@ -77,12 +61,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     buttonText: {
-        fontFamily: 'OpenSans',
-        fontWeight: 'bold'
+        fontFamily: 'OpenSans-Bold',
     },
     title: {
-        fontFamily: 'OpenSans',
-        fontWeight: 'bold',
+        fontFamily: 'OpenSans-Bold',
         fontSize: 20,
         padding: 20
     },
@@ -91,16 +73,14 @@ const styles = StyleSheet.create({
         width: '100%'
     },
     blurb: {
-        fontFamily: 'OpenSans',
+        fontFamily: 'OpenSans-Italic',
         fontSize: 14,
         padding: 20,
-        fontStyle: 'italic'
     },
     content: {
         flex: 1,
         fontFamily: 'OpenSans',
         fontSize: 16,
-        paddingTop: 30,
         paddingLeft: 20,
         paddingRight: 20
     },
@@ -113,20 +93,5 @@ const styles = StyleSheet.create({
     readMoreText: {
         color: 'white',
         fontWeight: 'bold'
-    },
-    webViewButton: {
-        backgroundColor: 'green',
-        padding: 10,
-        marginVertical: 10,
-        alignSelf: 'center'
-    },
-    webViewText: {
-        color: 'white',
-        fontWeight: 'bold'
-    },
-    webView: {
-        flex: 1,
-        width: '100%',
-        height: 300
     }
 });
