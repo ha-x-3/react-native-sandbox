@@ -15,6 +15,11 @@ export default function Homepage({navigation}) {
     }, []);
 
     const storyItem = ({item}) => {
+        //Check for removed stories and don't
+        if(item.url.startsWith('https://removed.com')) {
+            return null
+        }
+
         return (
             <TouchableWithoutFeedback
                 onPress={() => 
@@ -39,7 +44,7 @@ export default function Homepage({navigation}) {
                 <FlatList
                     data={newsData}
                     renderItem={storyItem}
-                    keyExtractor={(item) => item.url}
+                    keyExtractor={(item, index) => `${index}-${item.url}`} //Added index to resolve error for removed articles
                 />
             )}
         </View>
