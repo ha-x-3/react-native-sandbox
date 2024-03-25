@@ -26,10 +26,12 @@ export default function Footer() {
                 <Text>Quote</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity 
+                style={styles.button}
+                onPress={() => RootNavigation.navigate('Catalog')}
+            >
                 <Text>Catalog</Text>
             </TouchableOpacity>
-
         </View>
     );
 };

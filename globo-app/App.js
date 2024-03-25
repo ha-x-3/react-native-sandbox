@@ -13,6 +13,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import NewsDetail from './NewsDetail';
 import AboutGlobo from './About';
 import Quotepage from './Quote';
+import Catalogpage from './Catalog';
 
 SplashScreen.preventAutoHideAsync();
 const Stack = createStackNavigator();
@@ -71,6 +72,13 @@ export default function App() {
         component={Quotepage}
         options={{
           header: () => <Header headerDisplay="Get a Quote" />
+        }}
+      />
+      <Stack.Screen
+        name="Catalog"
+        component={Catalogpage}
+        options={{
+          header: () => <Header headerDisplay="Globomantics Robotics" />
         }}
       />
       
