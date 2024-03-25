@@ -12,14 +12,17 @@ export default function Footer() {
                 <Text>Home</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity 
+                style={styles.button}
+                onPress={() => RootNavigation.navigate('About')}
+            >
                 <Text>About</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.button}>
                 <Text>Quote</Text>
             </TouchableOpacity>
-            
+
             <TouchableOpacity style={styles.button}>
                 <Text>Catalog</Text>
             </TouchableOpacity>
