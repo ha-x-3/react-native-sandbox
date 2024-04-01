@@ -15,7 +15,7 @@ SplashScreen.preventAutoHideAsync();
 const Layout = () => {
     setStatusBarBackgroundColor('#36302c', false);
     setStatusBarStyle('light');
-    setStatusBarTranslucent(false);
+    setStatusBarTranslucent(true);
 
     const [fontsLoaded, fontError] = useFonts({
       "Hochstadt-Serif": require("./assets/fonts/Hochstadt-Serif.otf"),
