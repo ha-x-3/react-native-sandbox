@@ -18,9 +18,9 @@ const Layout = () => {
     setStatusBarTranslucent(true);
 
     const [fontsLoaded, fontError] = useFonts({
-      "Hochstadt-Serif": require("./assets/fonts/Hochstadt-Serif.otf"),
-      "TheGreatOutdoors-Regular": require("./assets/fonts/TheGreatOutdoors-Regular.otf"),
-      "WorkSans-Regular": require("./assets/fonts/WorkSans-Regular.ttf"),
+      "Hochstadt-Serif": require("../assets/fonts/Hochstadt-Serif.otf"),
+      "TheGreatOutdoors-Regular": require("../assets/fonts/TheGreatOutdoors-Regular.otf"),
+      "WorkSans-Regular": require("../assets/fonts/WorkSans-Regular.ttf"),
     });
 
     useEffect(() => {
