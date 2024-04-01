@@ -1,0 +1,66 @@
+import { StyleSheet, View, Text, Dimensions, Platform, Image } from "react-native";
+
+const windowDimensions = Dimensions.get('window');
+const winHeight = windowDimensions.height;
+const smallLogo = require('../assets/bethanys-pie-shop-logo_extra-4-black.png');
+
+const Footer = () => {
+    return (
+      <View style={styles.footer}>
+        <Image source={smallLogo} style={styles.smallLogoStyle} />
+        <Text style={styles.menu}>ABOUT</Text>
+        <Text style={styles.menu}>NEWS</Text>
+        <Text style={styles.menu}>BLOG</Text>
+        <Text style={styles.menu}>YOUTUBE</Text>
+      </View>
+    );
+};
+
+const styles = StyleSheet.create({
+  footer: {
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#d77948",
+    height: 50,
+    width: "100%",
+    flexDirection: "row",
+    ...Platform.select({
+      android: {
+        position: "absolute",
+        top: winHeight - 50,
+      },
+      ios: {
+        position: "absolute",
+        top: winHeight - 50,
+      },
+      default: {
+        position: 'relative',
+        bottom: 0
+      }
+    })
+  },
+  smallLogoStyle: {
+    height: 30,
+    width: 30,
+    ...Platform.select({
+        android: {
+            marginLeft: 23
+        },
+        ios: {
+            marginLeft: 23
+        },
+        default: {
+            left: '-35%'
+        }
+    })
+  },
+  menu: {
+    paddingLeft: 25,
+    paddingRight: 25,
+    color: '#FFFFFF',
+    fontFamily: 'WorkSans-Regular',
+    fontWeight: '700'
+  }
+});
+
+export default Footer;
