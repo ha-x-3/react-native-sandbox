@@ -23,12 +23,19 @@ const Header = () => {
             <Text 
                 style={styles.menu}
                 onPress={() => {
-                    router.push('/Contact')
+                    router.push('/Contact');
                 }}
             >
                 CONTACT
             </Text>
-            <Text style={styles.menu}>REGISTER</Text>
+            <Text 
+                style={styles.menu}
+                onPress={() => {
+                    router.push('/Register');
+                }}
+            >
+                REGISTER
+            </Text>
             <AntDesign style={styles.menu} name='user' size={24} color='white' />
             <Feather style={styles.menu} name='shopping-cart' size={24} color='white' />
         </View>
