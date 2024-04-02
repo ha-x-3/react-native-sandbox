@@ -7,6 +7,7 @@ import {
     setStatusBarStyle,
     setStatusBarTranslucent
 } from 'expo-status-bar';
+import { BethanyProvider } from "./BethanyContext";
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -34,11 +35,13 @@ const Layout = () => {
     }
 
     return (
-        <SafeAreaView>
-            <Header />
-            <Slot />
-            <Footer />
-        </SafeAreaView>
+        <BethanyProvider>
+            <SafeAreaView>
+                <Header />
+                <Slot />
+                <Footer />
+            </SafeAreaView>
+        </BethanyProvider>
     );
 };
 
