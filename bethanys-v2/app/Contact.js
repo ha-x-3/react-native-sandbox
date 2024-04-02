@@ -97,10 +97,10 @@ const styles = StyleSheet.create({
     height: boundedHeight,
     ...Platform.select({
       android: {
-        paddingBottom: 350,
+        paddingBottom: 160,
       },
       ios: {
-        paddingBottom: 350,
+        paddingBottom: 160,
       },
       default: {
         paddingBottom: 20,
