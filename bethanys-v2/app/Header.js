@@ -1,18 +1,33 @@
-import { StyleSheet, View, Image, Text } from "react-native";
+import { StyleSheet, View, Image, Text, TouchableWithoutFeedback } from "react-native";
 import { AntDesign, Feather } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 
 const Header = () => {
 
     const logo = require('../assets/bethanys-pie-shop-logo_horiz-white.png');
+    const router = useRouter();
 
     return (
         <View style={styles.header}>
-            <Image 
-                source={logo}
-                style={styles.logoStyle}
-            />
+            <TouchableWithoutFeedback
+                onPress={() => {
+                    router.replace('/');
+                }}
+            >
+                <Image 
+                    source={logo}
+                    style={styles.logoStyle}
+                />
+            </TouchableWithoutFeedback>
             <Text style={styles.menu}>SHOP</Text>
-            <Text style={styles.menu}>CONTACT</Text>
+            <Text 
+                style={styles.menu}
+                onPress={() => {
+                    router.push('/Contact')
+                }}
+            >
+                CONTACT
+            </Text>
             <Text style={styles.menu}>REGISTER</Text>
             <AntDesign style={styles.menu} name='user' size={24} color='white' />
             <Feather style={styles.menu} name='shopping-cart' size={24} color='white' />
