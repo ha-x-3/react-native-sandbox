@@ -20,7 +20,7 @@ export const BethanyProvider = (props) => {
         Alert.alert("User logged out");
       });
     } else {
-      router.push("/login");
+      router.push("/Login");
     }
   };
 

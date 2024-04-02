@@ -18,7 +18,7 @@ const NewsItem = ({ storyId, storyTitle, storyImage, storySnippet }) => {
     <TouchableOpacity
       onPress={() => {
         router.push({
-          pathname: "/newsDetail",
+          pathname: "/NewsDetail",
           params: { selectedStory: storyId },
         });
       }}

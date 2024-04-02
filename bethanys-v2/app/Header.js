@@ -40,7 +40,7 @@ const Header = () => {
       <Text
         style={styles.menu}
         onPress={() => {
-          router.push("/contact");
+          router.push("/Contact");
         }}
       >
         CONTACT
@@ -48,7 +48,7 @@ const Header = () => {
       <Text
         style={styles.menu}
         onPress={() => {
-          router.push("/register");
+          router.push("/Register");
         }}
       >
         REGISTER
