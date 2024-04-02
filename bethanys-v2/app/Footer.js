@@ -12,15 +12,22 @@ const Footer = () => {
     return (
       <View style={styles.footer}>
         <Image source={smallLogo} style={styles.smallLogoStyle} />
-        <Text 
-            style={styles.menu} 
-            onPress={() => {
-                router.push('/About');
-        }}
+        <Text
+          style={styles.menu}
+          onPress={() => {
+            router.push("/About");
+          }}
         >
-            ABOUT
+          ABOUT
         </Text>
-        <Text style={styles.menu}>NEWS</Text>
+        <Text
+          style={styles.menu}
+          onPress={() => {
+            router.push("/News");
+          }}
+        >
+          NEWS
+        </Text>
         <Text style={styles.menu}>BLOG</Text>
         <Text style={styles.menu}>YOUTUBE</Text>
       </View>
