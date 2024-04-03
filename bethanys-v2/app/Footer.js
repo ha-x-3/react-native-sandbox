@@ -44,13 +44,20 @@ const Footer = () => {
 			>
 				NEWS
 			</Text>
-			<Text style={styles.menu}>BLOG</Text>
-			<Text 
-        style={styles.menu}
-        onPress={bethanyTube}
-      >
-        YOUTUBE
-      </Text>
+			<Text
+				style={styles.menu}
+				onPress={() => {
+					router.push('/Blog');
+				}}
+			>
+				BLOG
+			</Text>
+			<Text
+				style={styles.menu}
+				onPress={bethanyTube}
+			>
+				YOUTUBE
+			</Text>
 		</View>
 	);
 };
