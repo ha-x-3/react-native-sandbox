@@ -8,7 +8,7 @@ const Shop = () => {
 
     useEffect(() => {
         setAllProducts(grabAllProducts());
-        console.log(grabAllProducts());
+        //console.log(grabAllProducts());
     }, []);
 
     return (
