@@ -36,7 +36,14 @@ const Header = () => {
       >
         <Image source={logo} style={styles.logoStyle} />
       </TouchableWithoutFeedback>
-      <Text style={styles.menu}>SHOP</Text>
+      <Text 
+        style={styles.menu}
+        onPress={() => {
+            router.push('/Shop');
+        }}
+      >
+        SHOP
+      </Text>
       <Text
         style={styles.menu}
         onPress={() => {
