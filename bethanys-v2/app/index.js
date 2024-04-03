@@ -18,8 +18,16 @@ const Home = () => {
           Enjoy a weekly selection of our favorite pies!
         </Text>
         <View style={styles.pieRow}>
-          <PieDisplay pieImage={pieA} product="classic apple pie" />
-          <PieDisplay pieImage={pieB} product="pumpkin pie" />
+          <PieDisplay 
+            pieImage={pieA} 
+            product="classic apple pie" 
+            prodId={'CP-01'}
+          />
+          <PieDisplay 
+            pieImage={pieB} 
+            product="pumpkin pie" 
+            prodId={'CP-02'}
+          />
         </View>
       </View>
     );

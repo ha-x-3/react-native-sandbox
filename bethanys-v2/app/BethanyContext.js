@@ -19,7 +19,7 @@ export const BethanyProvider = (props) => {
 
 	const toggleCart = () => {
 		if (cartLoaded) {
-			router.push('/cart');
+			router.push('/Cart');
 		} else {
 			Alert.alert('No items in shopping cart');
 		}
@@ -85,7 +85,7 @@ export const BethanyProvider = (props) => {
 				Alert.alert('User logged out');
 			});
 		} else {
-			router.push('/login');
+			router.push('/Login');
 		}
 	};
 
