@@ -22,7 +22,7 @@ const BlogPost = () => {
 	const getPost = async () => {
 		try {
 			const response = await fetch(
-				`http://192.168.0.25:3000/posts/${selectedPost}`
+				`http://192.168.0.218:3000/posts/${selectedPost}`
 			);
 			const singlePost = await response.json();
 			loadPost(singlePost);

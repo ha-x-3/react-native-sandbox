@@ -41,7 +41,7 @@ const Blog = () => {
 
 	const getPosts = async () => {
 		try {
-			const response = await fetch('http://192.168.0.25:3000/posts');
+			const response = await fetch('http://192.168.0.218:3000/posts');
 			const allPosts = await response.json();
 			//console.log(allPosts);
 			setBlogPosts(allPosts);
